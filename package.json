@@ -16,10 +16,12 @@
   "main": "dist/index.js",
   "devDependencies": {
     "@types/prettier": "2.2.1",
+    "npm-run-all": "^4.1.5",
     "prettier": "2.2.1"
   },
   "scripts": {
     "typegen": "ts-node src/scripts/typegen.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "prepare": "run-s typegen build"
   }
 }
