@@ -1,0 +1,21 @@
+<% if (it.interests?.length) { %>
+<section id="interests">
+	<h2>Interests</h2>
+	<% for (let interest of it.interests) { %>
+	<div class="item">
+		<% if (interest.name) { %>
+		<div class="name">
+			<%= interest.name %>
+		</div>
+		<% } %>
+		<% if (interest.keywords?.length) { %>
+		<ul class="keywords">
+			<% for (let keyword of interest.keywords) { %>
+			<li><%= keyword %></li>
+			<% } %>
+		</ul>
+		<% } %>
+	</div>
+	<% } %>
+</section>
+<% } %>

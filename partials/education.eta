@@ -1,0 +1,52 @@
+<% if (it.education.length) { %>
+<section id="education">
+	<h2>Education</h2>
+	<% for (let program of it.education) { %>
+	<div class="item">
+		<div class="date">
+			<% if (program.startDate) { %>
+			<span class="startDate">
+				<%= program.startDate %>
+			</span>
+			<% } %>
+			<% if (program.endDate) { %>
+			<span class="endDate">
+				- <%= program.endDate %>
+			</span>
+			<% } else { %>
+			<span class="endDate">
+				- Present
+			</span>
+			<% } %>
+		</div>
+		<% if (program.institution) { %>
+		<div class="institution">
+			<%= program.institution %>
+		</div>
+		<% } %>
+		<% if (program.area) { %>
+		<div class="area">
+			<%= program.area %>
+		</div>
+		<% } %>
+		<% if (program.studyType) { %>
+		<div class="studyType">
+			<%= program.studyType %>
+		</div>
+		<% } %>
+		<% if (program.gpa) { %>
+		<div class="gpa">
+			GPA: <%= program.gpa %>
+		</div>
+		<% } %>
+		<% if (program.courses.length) { %>
+		<ul class="courses">
+			<% for (let course of courses) { %>
+			  <li><%= course %></li>
+			<% } %>
+		</ul>
+		<% } %>
+	</div>
+	<% } %>
+</section>
+<% } %>

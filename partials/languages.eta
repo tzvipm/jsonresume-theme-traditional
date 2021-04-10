@@ -1,0 +1,19 @@
+<% if (it.languages?.length) { %>
+<section id="languages">
+	<h2>Languages</h2>
+	<% for (let lang of it.languages) { %>
+	<div class="item">
+		<% if (lang.language) { %>
+		<div class="language">
+			<%= lang.language %>
+		</div>
+		<% } %>
+		<% if (lang.fluency) { %>
+		<div class="fluency">
+			<em><%= lang.fluency %></em>
+		</div>
+		<% } %>
+	</div>
+	<% } %>
+</section>
+<% } %>

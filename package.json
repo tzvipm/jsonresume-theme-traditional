@@ -1,14 +1,25 @@
 {
-  "name": "jsonresume-theme-boilerplate",
-  "version": "0.1.2",
-  "description": "Boilerplate theme for JSON Resume",
-  "author": "Mattias Erming",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/erming/jsonresume-theme-boilerplate"
-  },
-  "license": "MIT",
+  "name": "jsonresume-theme-traditional",
+  "version": "0.0.0",
+  "description": "Traditional theme for JSON Resume",
+  "author": "Tzvi Melamed <tzvi@melamed.biz>",
+  "repository": "https://github.com/tzvipm/jsonresume-theme-traditional",
+  "license": "Unlicensed",
   "dependencies": {
-    "handlebars": "^2.0.0-alpha.4"
+    "eta": "^1.12.1",
+    "handlebars": "^4.7.7",
+    "isomorphic-unfetch": "^3.1.0",
+    "json-schema-to-typescript": "^10.1.4",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  },
+  "main": "dist/index.js",
+  "devDependencies": {
+    "@types/prettier": "2.2.1",
+    "prettier": "2.2.1"
+  },
+  "scripts": {
+    "typegen": "ts-node src/scripts/typegen.ts",
+    "build": "tsc"
   }
 }

@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+	<head>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+	
+	<title><%= it.resume.basics.name %></title>
+
+	<style>
+	<%~ it.css %>
+	</style>
+	
+	</head>
+	<body>
+	
+	<div id="resume">
+		<%~ includeFile('basics.eta', it.resume) %>
+		<%~ includeFile('work.eta', it.resume) %>
+		<% /* <%~ includeFile('volunteer.eta', it.resume) %> */ %>
+		<%~ includeFile('education.eta', it.resume) %>
+		<% /* <%~ includeFile('awards.eta', it.resume) %> */ %>
+		<% /* <%~ includeFile('publications.eta', it.resume) %> */ %>
+		<%~ includeFile('skills.eta', it.resume) %>
+		<%~ includeFile('languages.eta', it.resume) %>
+		<%~ includeFile('interests.eta', it.resume) %>
+		<% /* <%~ includeFile('references.eta', it.resume) %> */ %>
+	</body>
+</html>

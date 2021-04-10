@@ -1,0 +1,52 @@
+<% if (it.work.length) { %>
+<section id="work">
+	<h2>Work</h2>
+	<% for (let job of it.work) { %>
+	<div class="item">
+		<% if (job.company) { %>
+		<h3 class="name">
+			<%= job.company %>
+		</h3>
+		<% } %>
+		<div class="date">
+			<% if (job.startDate) { %>
+			<span class="startDate">
+				<%= job.startDate %>
+			</span>
+			<% } %>
+			<% if (job.endDate) { %>
+			<span class="endDate">
+				- <%= job.endDate %>
+			</span>
+			<% } else { %>
+			<span class="endDate">
+				- Present
+			</span>
+			<% } %>
+		</div>
+		<% if (job.position) { %>
+		<div class="position">
+			<%= job.position %>
+		</div>
+		<% } %>
+		<% if (job.website) { %>
+		<div class="website">
+			<a href="<%= job.website %>"><%= job.website %></a>
+		</div>
+		<% } %>
+		<% if (job.summary) { %>
+		<div class="summary">
+			<p><%= job.summary %></p>
+		</div>
+		<% } %>
+		<% if (job.highlights.length) { %>
+		<ul class="highlights">
+			<% for (let highlight of job.highlights) { %>
+			<li><%= highlight %></li>
+			<% } %>
+		</ul>
+		<% } %>
+	</div>
+	<% } %>
+</section>
+<% } %>

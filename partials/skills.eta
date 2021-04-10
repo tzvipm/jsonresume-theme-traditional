@@ -1,0 +1,26 @@
+<% if (it.skills?.length) { %>
+<section id="skills">
+	<h2>Skills</h2>
+	<% for (let skill of it.skills) { %>
+	<div class="item">
+		<% if (skill.name) { %>
+		<div class="name">
+			<%= skill.name %>
+		</div>
+		<% } %>
+		<% if (skill.level) { %>
+		<div class="level">
+			<em><%= skill.level %></em>
+		</div>
+		<% } %>
+		<% if (skill.keywords.length) { %>
+		<ul class="keywords">
+			<% for (let keyword of keywords) { %>
+			<li><%= keyword %></li>
+			<% } %>
+		</ul>
+		<% } %>
+	</div>
+	<% } %>
+</section>
+<% } %>

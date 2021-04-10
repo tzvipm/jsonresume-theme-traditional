@@ -1,0 +1,76 @@
+<% const {name, label, website, email, phone, summary, location, profiles} = it.basics %>
+
+<h1><%= name %></h1>
+<h2><%= label %></h2>
+<section id="basics">
+  <div class="contact">
+  <% if (website) { %>
+    <div class="website">
+      <strong>Website</strong>
+      <%= website %>
+    </div>
+  <% } %>
+  <% if(email) { %>
+    <div class="email">
+      <strong>Email</strong>
+      <%= email %>
+    </div>
+  <% } %>
+  <% if (phone) { %>
+    <div class="phone">
+      <strong>Phone</strong>
+      <%= phone %>
+    </div>
+  <% } %>
+  </div>
+  <% if (summary) { %>
+    <div class="summary">
+      <p><%= summary %></p>
+    </div>
+  <% } %>
+  <h3>Location</h3>
+  <section id="location">
+    <% if (location.address) { %>
+      <div class="address">
+        <strong>Address</strong>
+        <%= location.address %>
+      </div>
+    <% } %>
+    <% if (location.postalCode) { %>
+    <div class="postalCode">
+      <strong>Postal code</strong>
+      <%= location.postalCode %>
+    </div>
+    <% } %>
+    <% if (location.city) { %>
+    <div class="city">
+      <strong>City</strong>
+      <%= location.city %>
+    </div>
+    <% } %>
+    <% if (location.countryCode) { %>
+    <div class="countryCode">
+      <strong>Country code</strong>
+      <%= location.countryCode %>
+    </div>
+    <% } %>
+    <% if (location.region) { %>
+    <div class="region">
+      <strong>Region</strong>
+      <%= location.region %>
+    </div>
+    <% } %>
+  </section>
+  <% if (profiles?.length) { %>
+  <h3>Profiles</h3>
+  <section id="profiles">
+    <% for (let profile of profiles) { %>
+      <div class="item">
+        <span class="network">
+          <%= profile.network %>
+        </span> - <a href="<%= profile.url %>"><%= profile.username ?? 'Link' %></a>
+      </div>
+    <% } %>
+  </section>
+  <% } %>
+</section>
